@@ -22,36 +22,49 @@
   letter-spacing: 0px;
   line-height: 1;
 }
+
 @utility text-preset-2 {
   font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: 0px;
   line-height: 1;
 }
+
 @utility text-preset-3 {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0px;
   line-height: 1;
 }
+
 @utility text-preset-4 {
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0px;
   line-height: 1;
 }
+
 @utility text-preset-5 {
   font-size: 1.125rem;
   font-weight: 800;
   letter-spacing: 0px;
   line-height: 1.33;
 }
+
+@utility text-preset-5-reg {
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.33;
+}
+
 @utility text-preset-6 {
   font-size: 0.93755rem;
   font-weight: 400;
   letter-spacing: 0px;
   line-height: 1.733;
 }
+
 @utility text-preset-7 {
   font-size: 0.875rem;
   font-weight: 700;
@@ -76,35 +89,108 @@
   }
 
   .nav-item {
-    @apply text-preset-5;
+    @apply text-preset-5-reg text-navy-950 hover:text-red focus:text-red focus-visible:text-red;
+  }
+
+  .btn {
+    @apply cursor-pointer bg-red px-8 py-2 text-preset-7 text-navy-950 uppercase;
+  }
+
+  .new-stories__article {
+    @apply flex cursor-pointer flex-col gap-2;
+  }
+
+  .articles__article {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "picture number"
+      "picture heading"
+      "picture summary";
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+  }
+  .articles__article > img {
+    grid-area: picture;
+  }
+  .articles__article > h1 {
+    grid-area: number;
+    @apply text-preset-3 text-red;
+  }
+  .articles__article > h2 {
+    grid-area: heading;
+    @apply text-preset-5 text-navy-950;
+  }
+  .articles__article > p {
+    grid-area: summary;
+    @apply text-preset-6 text-navy-600;
+  }
+}
+@layer base {
+  html {
+    font-family: "Inter";
+  }
+  /* Controlling the SVG element size for the nav menu buttons */
+  #hamburger-menu > svg:nth-child(1) {
+    width: 2.5rem;
+    height: 1.125rem;
+  }
+  #close-menu > svg:nth-child(1) {
+    height: 2rem;
+    width: fit-content;
+  }
+
+  nav {
+    position: fixed;
+    background-color: var(--color-white);
+    right: 0;
+    top: 0;
+    padding: calc(1.5rem + 2rem + 5.5rem) 1.25rem 0;
+    min-height: 100vh;
+    width: 68%; /* Will be 40% for tablet */
+  }
+
+  nav > ul {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  main {
+    grid-template-areas:
+      "main-story"
+      "new-stories"
+      "articles";
+    row-gap: 4rem;
+  }
+
+  hr {
+    border-color: var(--color-navy-600);
+    @apply my-8;
   }
 }
 
-html {
-  font-family: "Inter";
+.main__story {
+  grid-template-areas:
+    "picture"
+    "heading"
+    "summary"
+    "button-cta";
+  row-gap: 1.5rem;
 }
 
-/* Controlling the SVG element size for the nav menu buttons */
-#hamburger-menu > svg:nth-child(1) {
-  width: 2.5rem;
-  height: 1.125rem;
-}
-#close-menu > svg:nth-child(1) {
-  height: 2rem;
+.main__btn {
+  grid-area: button-cta;
   width: fit-content;
+  @apply hover:bg-navy-950 hover:text-white focus:bg-navy-950 focus:text-white focus-visible:bg-navy-950 focus-visible:text-white active:bg-navy-950 active:text-white;
 }
 
-nav {
-  position: fixed;
-  background-color: var(--color-white);
-  right: 0;
-  top: 0;
-  padding: calc(1.5rem + 2rem + 5.5rem) 1.25rem 0;
-  min-height: 100vh;
-  width: 68%; /* Will be 40% for tablet */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
-
-nav > ul {
-  display: grid;
-  gap: 1.5rem;
+.attribution a {
+  @apply text-navy-950 hover:text-red focus:text-red;
 }
