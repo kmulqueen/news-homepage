@@ -1,60 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | News homepage</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <script src="./script.js" defer></script>
+    <title>News homepage</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="flex flex-row justify-between px-4 py-6 items-center">
+      <img src="./assets/images/logo.svg" alt="News site logo" class="logo" />
+      <button
+        class="hamburger-menu menu-icon"
+        id="hamburger-menu"
+        aria-label="Open navigation menu"
+        aria-controls="nav"
+      >
+        <svg aria-hidden="true" focusable="false">
+          <use href="./assets/images/sprite.svg#hamburger"></use>
+        </svg>
+      </button>
+      <button
+        id="close-menu"
+        class="hidden close-menu menu-icon"
+        aria-label="Close navigation menu"
+        aria-controls="nav"
+        aria-hidden="true"
+      >
+        <svg aria-hidden="true" focusable="false">
+          <use href="./assets/images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <nav id="nav" class="hidden" aria-hidden="true">
+        <ul>
+          <li><a href="#home" class="nav-item">Home</a></li>
+          <li><a href="#new" class="nav-item">New</a></li>
+          <li><a href="#popular" class="nav-item">Popular</a></li>
+          <li><a href="#trending" class="nav-item">Trending</a></li>
+          <li><a href="#categories" class="nav-item">Categories</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+    <!--  -->
+    <h1 class="text-preset-1">The Bright Future of Web 3.0?</h1>
+    <!--  -->
+    We dive into the next evolution of the web that claims to put the power of
+    the platforms back into the hands of the people. But is it really fulfilling
+    its promise?
+    <!--  -->
+    Read more
+    <!--  -->
+    New
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    Hydrogen VS Electric Cars Will hydrogen-fueled cars ever catch up to EVs?
+    <!--  -->
+    The Downsides of AI Artistry What are the possible adverse effects of
+    on-demand AI image generation?
+    <!--  -->
+    Is VC Funding Drying Up? Private funding by VC firms is down 50% YOY. We
+    take a look at what that means.
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    01 Reviving Retro PCs What happens when old PCs are given modern upgrades?
+    <!--  -->
+    02 Top 10 Laptops of 2022 Our best picks for various needs and budgets.
+    <!--  -->
+    03 The Growth of Gaming How the pandemic has sparked fresh opportunities.
 
-  The Bright Future of Web 3.0?
-
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
 </html>
