@@ -14,7 +14,9 @@
     <title>News homepage</title>
   </head>
   <body>
-    <header class="flex flex-row items-center justify-between px-4 py-6">
+    <header
+      class="flex flex-row items-center justify-between px-4 py-6 sm:px-20 sm:py-8 xl:px-40 xl:pb-16 xl:pt-24"
+    >
       <img src="./assets/images/logo.svg" alt="News site logo" class="logo" />
       <button
         class="hamburger-menu menu-icon"
@@ -47,11 +49,11 @@
         </ul>
       </nav>
     </header>
-    <main class="grid px-4">
+    <main class="grid px-4 sm:px-20 xl:px-40">
       <section class="grid main__story">
         <picture>
           <source
-            media="(min-width: 75em)"
+            media="(min-width: 40em)"
             srcset="./assets/images/image-web-3-desktop.jpg"
           />
           <img
@@ -59,18 +61,22 @@
             alt="A colorful, abstract image with a cartoon-ish tech undertone."
             width="686"
             height="600"
-            class="mb-6"
+            class="mb-6 w-auto"
           />
         </picture>
-        <h1 class="text-preset-2">The Bright Future of Web 3.0?</h1>
-        <p class="text-preset-6">
-          We dive into the next evolution of the web that claims to put the
-          power of the platforms back into the hands of the people. But is it
-          really fulfilling its promise?
-        </p>
-        <button class="main__btn btn btn--cta">Read more</button>
+        <h1 class="text-preset-2 xl:text-preset-1">
+          The Bright Future of Web 3.0?
+        </h1>
+        <div class="main__story__summary">
+          <p class="text-preset-6 text-navy-600">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <button class="main__btn btn btn--cta">Read more</button>
+        </div>
       </section>
-      <article class="bg-navy-950 px-6 py-4">
+      <article class="bg-navy-950 px-6 py-4 xl:py-6 new-stories">
         <h1 class="text-preset-3 text-gold mb-8">New</h1>
         <article class="new-stories__article group">
           <h2 class="text-preset-4 text-white group-hover:text-gold">
@@ -101,7 +107,7 @@
           </p>
         </article>
       </article>
-      <article class="mb-16 flex flex-col gap-8">
+      <article class="mb-16 flex flex-col gap-8 xl:flex-row articles">
         <article class="articles__article group">
           <img
             src="./assets/images/image-retro-pcs.jpg"

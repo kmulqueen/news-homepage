@@ -88,8 +88,19 @@
     cursor: pointer;
   }
 
+  .nav-desktop {
+    position: unset;
+    min-height: unset;
+    padding: unset;
+    width: unset;
+  }
+
+  .nav-desktop > ul {
+    display: flex;
+  }
+
   .nav-item {
-    @apply text-preset-5-reg text-navy-950 hover:text-red focus:text-red focus-visible:text-red;
+    @apply text-preset-5-reg text-navy-950 hover:text-red focus:text-red focus-visible:text-red xl:text-navy-600;
   }
 
   .btn {
@@ -103,8 +114,8 @@
   .articles__article {
     cursor: pointer;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, min-content);
     grid-template-areas:
       "picture number"
       "picture heading"
@@ -114,6 +125,7 @@
   }
   .articles__article > img {
     grid-area: picture;
+    max-height: 8rem;
   }
   .articles__article > h1 {
     grid-area: number;
@@ -149,7 +161,8 @@
     top: 0;
     padding: calc(1.5rem + 2rem + 5.5rem) 1.25rem 0;
     min-height: 100vh;
-    width: 68%; /* Will be 40% for tablet */
+    width: 68%;
+    @apply md:w-[40%];
   }
 
   nav > ul {
@@ -172,10 +185,28 @@
 }
 
 .main__story {
+  grid-area: main-story;
   grid-template-areas:
     "picture"
     "heading"
-    "summary"
+    "summary";
+  row-gap: 1.5rem;
+}
+
+.main__story > picture {
+  grid-area: picture;
+}
+
+.main__story > h1 {
+  grid-area: heading;
+}
+
+.main__story__summary {
+  grid-area: summary;
+  display: grid;
+  grid-template-rows: min-content min-content;
+  grid-template-areas:
+    "text"
     "button-cta";
   row-gap: 1.5rem;
 }
@@ -186,6 +217,14 @@
   @apply hover:bg-navy-950 hover:text-white focus:bg-navy-950 focus:text-white focus-visible:bg-navy-950 focus-visible:text-white active:bg-navy-950 active:text-white;
 }
 
+.new-stories {
+  grid-area: new-stories;
+}
+
+.articles {
+  grid-area: articles;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -193,4 +232,32 @@
 }
 .attribution a {
   @apply text-navy-950 hover:text-red focus:text-red;
+}
+
+@media (min-width: 80rem) {
+  main {
+    grid-template-areas:
+      "main-story main-story new-stories"
+      "main-story main-story new-stories"
+      "articles articles articles";
+
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+
+  .main__story {
+    grid-template-areas:
+      "picture picture"
+      "heading summary";
+    row-gap: unset;
+    column-gap: 2rem;
+  }
+
+  .main__story__summary {
+    row-gap: 2rem;
+  }
+
+  .articles__article {
+    row-gap: unset;
+  }
 }
